@@ -33,7 +33,8 @@ jobs:
           command: |
             ansible-playbook -i inventory main.yml
   smoke_test:
-    docker: apline:latest
+    docker:
+      - image: apline:latest
     steps:
       - run: apk add --update curl
       - run:
